@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时功能测试</title>
+</head>
+<body>
+<button id="start" onclick="start()">start</button>
+<button id="stop" onclick="stop()">stop</button>
+</body>
+</html>
+<script>
+    onload = function () {
+        count = 0;
+        sta = document.getElementById("start");
+    }
+    function start() {
+        sta.disabled = true;
+        interval = setInterval(function () {
+            console.log(count++);
+        }, 100);
+    }
+    function stop() {
+        sta.disabled = false;
+        clearInterval(interval);
+    }
+</script>

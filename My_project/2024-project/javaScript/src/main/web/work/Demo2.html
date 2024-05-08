@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="Demo2.css">
+
+</head>
+
+<body>
+<!--滑块-->
+<div id="slider">
+    <button id="left" class="left">left</button>
+    <img src="../imgs/1.jpg" id="img">
+    <button id="right" class="right">right</button>
+    <!--圆点-->
+    <div id="clots">
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+    onload = function () {
+        let slider = document.getElementById("slider");
+        let img = document.getElementById("img");
+        let left = document.getElementById("left");
+        let right = document.getElementById("right");
+        let clots = document.getElementById("clots");
+
+        let images = ["../imgs/1.jpg", "../imgs/2.jpg", "../imgs/3.jpg", "../imgs/4.jpg"];
+        //规则计算基数
+        let count = 0;
+        let interval;
+        timer();
+
+        for (let i = 0; i < images.length; i++) {
+            let button = document.createElement("button");
+            button.onclick = function () {
+                img.src = images[i];
+            }
+            clots.appendChild(button);
+        }
+
+        function timer() {
+            interval = setInterval(function () {
+                count++;
+                show();
+            }, 1000);
+        }
+
+        slider.onmouseover = function () {
+            clearInterval(interval);
+        }
+
+        slider.onmouseleave = function () {
+            timer();
+        }
+
+        left.onclick = function () {
+            count--;
+            show();
+        }
+
+        right.onclick = function () {
+            count++;
+            show();
+        }
+
+        function show() {
+            if (count === 4)
+                count = 0;
+            if (count === -1)
+                count = 3;
+            img.src = images[count];
+        }
+    }
+</script>

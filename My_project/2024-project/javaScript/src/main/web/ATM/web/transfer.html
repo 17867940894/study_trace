@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <link rel="stylesheet" href="../css/transfer.css">
+</head>
+
+<body>
+<div id="main">
+    <div class="center">
+        <div class="top">
+            <span class="s1">请输入需要转帐的账号和金额</span>
+        </div>
+        <div class="bottom">
+            <div>
+                <input id="transferNumber" placeholder="请输入16位数卡号">
+                <input id="sum" placeholder="请输入转账金额">
+            </div>
+        </div>
+    </div>
+
+    <div id="right" class="right">
+        <button id="ok">
+            确认
+        </button>
+
+        <button id="back">
+            返回
+        </button>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    let money = localStorage.getItem('money');
+    let password = localStorage.getItem('password');
+    if (money === null) {
+        location.href = 'index.html';
+    }
+    if (password === null) {
+        location.href = 'index.html';
+    }
+    onload = function () {
+        let transferNumber = document.getElementById("transferNumber");
+        let sum = document.getElementById("sum");
+        let ok = document.getElementById("ok");
+        let back = document.getElementById("back");
+        let reg = RegExp('[0-9]{16}');
+        let isOk = false;
+
+back.onclick = function () {
+    location.href = 'userIndex.html';
+}
+
+        ok.onclick = function () {
+            isOk = true;
+            judge();
+        }
+
+        function judge() {
+            let s = sum.value;
+            if (isNaN(s) || s==='' || s/1 < 0){
+                alert('金额输入不合法');
+                transferNumber.value = '';
+                sum.value = '';
+                return;
+            }
+
+            if (isOk && reg.test(transferNumber.value)){
+                let money = localStorage.getItem('money');
+                if (money/1 >= s){
+                    localStorage.removeItem('money');
+                    localStorage.setItem('money', (money - s) + '');
+                    location.href = 'userIndex.html';
+                }else{
+                    alert('余额不足');
+                    transferNumber.value = '';
+                    sum.value = '';
+                }
+            }else {
+                transferNumber.value = '';
+                sum.value = '';
+                alert('请输入正确的银行卡号');
+            }
+
+        }
+    }
+</script>

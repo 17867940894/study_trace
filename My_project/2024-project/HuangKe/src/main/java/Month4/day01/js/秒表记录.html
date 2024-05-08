@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒表</title>
+    <link rel="stylesheet" href="Demo1.css">
+</head>
+<body>
+<span>00</span> :
+<span>00</span> :
+<span>00</span>
+<hr>
+<button id="start">start</button>
+<!--复位-->
+<button id="reposition">复位</button>
+<!--记录-->
+<button id="record">记录</button>
+<!--记录展示-->
+<div id="recordShow">
+
+</div>
+</body>
+</html>
+<script>
+    /**
+     * 按钮的状态保证只会有一个定时器执行，避免出现多个定时器执行同一功能，出现加速状况
+     */
+    onload = function () {
+        // 基数
+        let count = 0;
+        let start = document.getElementById("start");
+        let reposition = document.getElementById("reposition");
+        let record = document.getElementById("record");
+        let recordShow = document.getElementById("recordShow");
+        let spans = document.getElementsByTagName("span");
+        start.onclick = function () {
+            if (start.innerText === "start") {
+                start.innerText = "stop";
+                interval = setInterval(function () {
+                    count++;
+                    // 当基数=60，分钟位置加一
+                    if (count === 60) {
+                        count = 0;
+                        let m = parseInt(spans[1].innerText);
+                        // 分钟小于两位数补零
+                        spans[1].innerText = m < 10 ? m + 1 === 10 ? m + 1 : "0" + (m + 1) : m + 1 + '';
+                    }
+                    // 秒小于两位数补零
+                    spans[2].innerText = count < 10 ? "0" + count : count;
+                }, 1000);
+            } else {
+                start.innerText = "start";
+                clearInterval(interval);
+            }
+        }
+
+        // 复位
+        reposition.onclick = function () {
+            count = 0;
+            clearInterval(interval);
+            start.innerText = "start";
+            spans[0].innerText = '00';
+            spans[1].innerText = '00';
+            spans[2].innerText = '00';
+        }
+
+        record.onclick = function () {
+            let ps = document.getElementsByTagName("p");
+            if (ps.length < 5){
+                let p = document.createElement("p");
+                p.innerText = '' + spans[0].innerText + ':' + spans[1].innerText + ':' + spans[2].innerText;
+                recordShow.appendChild(p);
+            }else{
+                recordShow.removeChild(ps[0]);
+                let p = document.createElement("p");
+                p.innerText = '' + spans[0].innerText + ':' + spans[1].innerText + ':' + spans[2].innerText;
+                recordShow.appendChild(p);
+            }
+        }
+    }
+
+
+</script>

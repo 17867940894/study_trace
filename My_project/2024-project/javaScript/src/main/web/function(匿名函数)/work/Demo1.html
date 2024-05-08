@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击图片切换</title>
+    <link rel="stylesheet" href="Demo1.css">
+</head>
+<body>
+<img id="man" src = "../../imgs/man.png" alt="">
+</body>
+</html>
+
+<script>
+    onload = function(){
+        var man = document.getElementById("man");
+        var t = false;
+        man.onclick = function(){
+            if(!t){
+                man.src = "../../imgs/man.png";
+            }else{
+                man.src = "../../imgs/man0.png";
+            }
+            t = !t;
+        }
+    }
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框</title>
+</head>
+<body>
+<!--全选-->
+<input type="checkbox" id="checkAll">
+<!--相反-->
+<button id="opposite">反选</button>
+<hr>
+<input type="checkbox" class="check">
+<br>
+<input type="checkbox" class="check">
+<br>
+<input type="checkbox" class="check">
+</body>
+</html>
+<script>
+    onload = function () {
+        let checkAll = document.getElementById("checkAll");
+        let opposite = document.getElementById("opposite");
+        let check = document.getElementsByClassName("check");
+        let count = 0;
+        checkAll.onclick = function () {
+            if (checkAll.checked) {
+                for (let i = 0; i < check.length; i++) {
+                    check[i].checked = true;
+                    count = check.length;
+                }
+            } else {
+                for (let i = 0; i < check.length; i++) {
+                    check[i].checked = false;
+                    count = 0;
+                }
+            }
+        }
+        opposite.onclick = function () {
+            for (let i = 0; i < check.length; i++) {
+                if (check[i].checked === true) {
+                    count--;
+                    check[i].checked = !check[i].checked;
+                } else {
+                    count++;
+                    check[i].checked = !check[i].checked;
+                }
+            }
+            checkAll.checked = count === check.length;
+        }
+        for (let i = 0; i < check.length; i++) {
+            check[i].onclick = function () {
+                if (!this.checked) {
+                    checkAll.checked = false;
+                    count--;
+                } else {
+                    if (++count === check.length) {
+                        checkAll.checked = true;
+                    }
+                }
+            }
+        }
+    }
+</script>

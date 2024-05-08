@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方块移入移出变色</title>
+    <style>
+        li{
+            width: 1000px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
+
+<script>
+    onload = function () {
+        let elementById = document.getElementsByTagName("li");
+        let color;
+        for (let i = 0; i < elementById.length; i++) {
+            if (i % 2 === 0){
+                elementById[i].style.background = "aqua";
+            }else{
+                elementById[i].style.background = "white";
+            }
+            elementById[i].onmouseleave = function () {
+                this.style.background = color;
+            }
+            elementById[i].onmouseover = function () {
+                color = this.style.background;
+                this.style.background = "blue";
+            }
+        }
+
+    }
+</script>

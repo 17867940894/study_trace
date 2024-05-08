@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>work</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    onload = function () {
+
+
+        // 测试冒泡排序
+        const array = [64, 34, 25, 12, 22, 11, 90];
+        console.log("排序前：" + array);
+        const sortedArray = bubbleSort(array);
+        console.log("排序后：" + sortedArray);
+
+        // 测试斐波那契数列
+        for (let i = 1; i <= 10; i++) {
+            console.log("斐波那契数列第 " + i + " 项为：" + fibonacci(i));
+        }
+
+        function bubbleSort(arr) {
+            const len = arr.length;
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // 交换元素
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        function fibonacci(n) {
+            if (n === 0) {
+                return 0;
+            } else if (n === 1) {
+                return 1;
+            } else {
+                return fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        }
+    }
+</script>

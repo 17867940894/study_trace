@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo1</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    onload = function () {
+        let person = {
+            name: '张三',
+            age: 22,
+            garden: '男',
+            salary: 20000,
+            address: '北京',
+            show: function () {
+                console.log(
+                    "姓名:" + this.name +
+                    "\n年龄:" + this.age +
+                    "\n性别:" + this.garden +
+                    "\n工资:" + this.salary +
+                    '\n地址:' + this.address);
+            }
+        }
+
+        function Student(name, age, garden, address, hobby) {
+            this.name = name;
+            this.age = age;
+            this.garden = garden;
+            this.address = address;
+            this.hobby = hobby;
+            this.show = function () {
+                console.log(
+                    "姓名:" + this.name +
+                    "\n年龄:" + this.age +
+                    "\n性别:" + this.garden +
+                    "\n工资:" + this.hobby +
+                    '\n地址:' + this.address);
+            }
+        }
+
+        let s1 = new Student('zs', '18', 'nan', 'shanghai', '篮球');
+        let s2 = new Student('zs', '18', 'nan', 'shanghai', '跳');
+        s2.show();
+        s1.show();
+
+        // for (let personKey in person) {
+        //     console.log(personKey + ':' + person[personKey])
+        // }
+    }
+</script>

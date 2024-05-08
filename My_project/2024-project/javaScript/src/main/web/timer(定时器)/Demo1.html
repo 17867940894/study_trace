@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    onload = function () {
+        let i = 0;
+        //在指定时间后，只执行一次函数,返回一个定时器id
+        let t = setTimeout(function () {
+            console.log(i++);
+        }, 1000);
+        //清除定时器 t
+        clearTimeout(t);
+        //设置定时器，时间的单位是毫秒，返回一个定时器id
+        let interval = setInterval(function () {
+            console.log(i++);
+        }, 1000);
+        //清除定时器 interval
+        clearInterval(interval);
+    }
+</script>

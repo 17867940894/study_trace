@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //除零
+    function homework1(arr) {
+        for (let i = 0; i < arr.length; i++)
+            if (arr[i] === 0)
+                arr.splice(i,1);
+        console.log(arr)
+    }
+
+    //筛选数组中的值
+    function homework2(arr) {
+        return arr.filter((currentValue) => currentValue >= 10);
+    }
+
+    onload = function (){
+        let arr = [1, 55, 3, 848, 0, 0, -5, 1, 158];
+        console.log('--------------homework1:数组除零--------------');
+        homework1(arr)
+        console.log('--------------homework2:筛选数组中的值--------------');
+        //新数组接受返回值
+        let arr2 = homework2(arr);
+        console.log('原数组' + arr.join());
+        console.log('新数组' + arr2.join());
+    }
+</script>

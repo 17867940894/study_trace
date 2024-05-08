@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    onload = function () {
+        let arr = [1, 55, 3, 848, 0, 0, -5, 1, 158];
+        //返回一个倒叙的数组,原数组会改变
+        let arr1 = arr.reverse();
+        //默认用,分割数组，组成新的字符串
+        console.log(arr.join());
+        console.log();
+
+        console.log(arr1.join());
+        // 给数组排序，默认升序(函数式接口)
+        // console.log(arr1.sort((a, b) => a - b));
+        console.log(
+            arr1.sort(
+                function (a, b) {
+                    return a - b;
+                }
+            )
+        )
+    }
+</script>

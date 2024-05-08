@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imgs/login.jpg");
+    background-size: 100%;
+    display: flex;
+}
+
+.keyboardEntry {
+    position: relative;
+    top: 4vh;
+    margin: auto;
+    height: 60vh;
+    width: 30vw;
+}
+
+#inp {
+    display: block;
+    position: absolute;
+    margin: auto;
+    border: #1e1f22 3px solid;
+    border-radius: 1vh;
+    top: 7vh;
+    text-align: center;
+    line-height: 7vh;
+    font-size: 3vh;
+    width: 29vw;
+    height: 7vh;
+}
+
+.passwordInput, .passwordButtons {
+    border-radius: 1vh;
+    width: 100%;
+}
+
+.passwordButtons {
+    margin-top: 2vh;
+    position: absolute;
+    top: 15vh;
+}
+
+.passwordButtons div {
+    overflow: hidden;
+    margin: auto 0;
+    justify-content: space-between;
+    padding-bottom: 0.5vh;
+    height: 10vh;
+    display: flex;
+}
+
+.number {
+    border-radius: 1vh;
+    width: 9.5vw;
+    height: 10vh;
+}
+
+.updatePassword {
+    position: relative;
+    top: 30vh;
+    width: 20vw;
+    height: 70vh;
+}
+
+.updatePassword button {
+    position: relative;
+    margin-bottom: 10vh;
+    border-radius: 1vh;
+    width: 80%;
+    height: 10%;
+    background: linear-gradient(to bottom, white 10%, #34a6f5);
+    font-size: 3vh;
+}
+
+#quit {
+    background: linear-gradient(to bottom, white 10%, #70ff00);
+}

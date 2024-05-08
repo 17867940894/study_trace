@@ -1,0 +1,39 @@
+* {
+    margin: auto;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imgs/userIndex.jpg");
+    background-size: 100%;
+    display: flex;
+    position: relative;
+}
+
+.left, .right {
+    position: absolute;
+    top: 30vh;
+    width: 20vw;
+    height: 70vh;
+}
+
+.right {
+    right: 0;
+}
+
+button {
+    position: relative;
+    display: block;
+    margin-bottom: 10vh;
+    border-radius: 1vh;
+    width: 80%;
+    height: 10%;
+    background: linear-gradient(to bottom, white 10%, #34a6f5);
+    font-size: 3vh;
+}
+
+#quit {
+    background: linear-gradient(to bottom, white 10%, #70ff00);
+}
+

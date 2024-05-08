@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- kind 种类 -->
+    <select id="kind">
+        <option value="0">蔬菜</option>
+        <option value="1">肉</option>
+        <option value="2">零食</option>
+        <option value="3">主食</option>
+    </select>
+
+    <select id="kindElement">
+        <option>商品</option>
+    </select>
+</body>
+</html>
+
+<script>
+    var kinds = new Array(4);
+    kinds[0] = ["萝卜" ,"青菜" ,"包菜" ,"番茄" ,"葱" ,"蒜"];
+    kinds[1] = ["牛肉" ,"羊肉" ,"猪肉" ,"狗肉" ];
+    kinds[2] = ["薯片" ,"巧克力" ,"饼干" ,"饮料" ,"辣条"];
+    kinds[3] = ["饭" ,"面包" ,"面条" ];
+
+    var kind = document.getElementById("kind");
+    var kindElements = document.getElementById("kindElement");
+    
+    kind.onchange = function(){
+        var kindElement = kinds[this.value];
+        kindElements.length = 0;
+        for(var i = 0;i < kindElement.length;i++){
+            var temp = document.createElement("option");
+            var elmentName = kindElement[i];
+            temp.innerText = elmentName;
+            kindElements.appendChild(temp);
+        }
+    }
+</script>

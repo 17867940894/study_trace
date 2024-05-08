@@ -1,0 +1,66 @@
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imgs/login.jpg");
+    background-size: 100%;
+    display: flex;
+    position: relative;
+}
+
+.right {
+    position: absolute;
+    top: 30vh;
+    right: 0;
+    width: 20vw;
+    height: 70vh;
+}
+
+.center{
+    position: relative;
+    margin: auto;
+    width: 40vw;
+    height: 40vh;
+    background: grey;
+}
+
+.top{
+    width: 40vw;
+    height: 20%;
+    text-align: center;
+    font-size: 4vh;
+    background: #964040;
+}
+
+.s1{
+    display: block;
+    line-height: 8vh;
+}
+
+#balance{
+    margin: auto;
+    line-height: 32vh;
+}
+
+.bottom{
+    width: 40vw;
+    height: 80%;
+    background: white;
+    font-size: 3vh;
+    text-align: center;
+}
+
+button {
+    position: relative;
+    display: block;
+    top: 40vh;
+    margin-bottom: 10vh;
+    border-radius: 1vh;
+    width: 80%;
+    height: 10%;
+    background: linear-gradient(to bottom, white 10%, #34a6f5);
+    font-size: 3vh;
+}
+
+#back {
+    background: linear-gradient(to bottom, white 10%, #70ff00);
+}

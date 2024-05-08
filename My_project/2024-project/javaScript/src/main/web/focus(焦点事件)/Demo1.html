@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机号判断是否注册</title>
+</head>
+<body>
+<input id="inp">
+<!--register : 注册-->
+<button id="register" disabled>注册</button>
+<br>
+<!--hint : 提示-->
+<span id="hint"></span>
+</body>
+</html>
+
+<script>
+    onload = function (){
+        let inp = document.getElementById("inp");
+        let register = document.getElementById("register");
+        let hint = document.getElementById("hint");
+        let reg = new RegExp("1[0-9]{10}");
+        inp.onblur = function () {
+            let isPhone = reg.test(inp.value);
+            if (isPhone){
+                hint.innerText = "手机号可以使用";
+                hint.style.color = "green";
+                register.disabled = false;
+                return;
+            }
+            register.disabled = true;
+            hint.innerText = "手机号已被使用";
+            hint.style.color = "red";
+        }
+        register.onfocus = function () {
+            hint.innerText  = "";
+        }
+        register.onclick = function () {
+            hint.innerText  = "";
+            inp.value = "";
+        }
+    }
+</script>

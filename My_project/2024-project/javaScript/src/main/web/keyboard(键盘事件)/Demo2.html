@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码满足条件发送</title>
+</head>
+<body>
+<input id="inp">
+<button id="send" disabled>发送验证码</button>
+</body>
+</html>
+<script>
+    onload = function () {
+        let inp = document.getElementById("inp");
+        let send = document.getElementById("send");
+        //这种方式也可以
+        // let phoneRule = /^1[0-9]{10}$/
+        inp.onkeyup = function () {
+            let reg = new RegExp("1[0-9]{10}")
+            let b = reg.test(inp.value);
+            if (b){
+                send.disabled = false;
+            }else{
+                send.disabled = true;
+            }
+        }
+    }
+</script>

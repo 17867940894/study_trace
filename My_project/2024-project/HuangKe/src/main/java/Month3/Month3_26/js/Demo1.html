@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    onload = function () {
+        // a();
+        b();
+        // c();
+    }
+
+    function c() {
+        let year = prompt("请输入需要判断的年份");
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0)
+            alert(year + "年是闰年");
+        else
+            alert(year + "年不是闰年");
+    }
+
+    function a() {
+        let name = prompt("请输入姓名");
+        if (name === '张三')
+            alert("罚款五元");
+        else
+            alert("做一下口供,你可以走了");
+    }
+
+    function b() {
+        if (prompt("请输入一个数字：") / 2 === 0)
+            alert('偶数');
+        else
+            alert('奇数');
+    }
+</script>

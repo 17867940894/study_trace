@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-dbutils-1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/4.26(C3P0)/lib/commons-dbutils-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/4.26(C3P0)/lib/druid-1.0.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

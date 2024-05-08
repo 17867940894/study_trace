@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>存款</title>
+    <link rel="stylesheet" href="../css/userIndex.css">
+</head>
+<body>
+<div class="main">
+
+    <div class="left">
+        <button class="number">100</button>
+        <button class="number">300</button>
+        <button class="number">500</button>
+        <button class="number">1000</button>
+    </div>
+
+    <div class="right">
+        <button class="number">2000</button>
+        <button id="userDefined">其他金额</button>
+        <button id="back">返回</button>
+        <button id="quit">退卡</button>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+
+    let money = localStorage.getItem('money');
+    let password = localStorage.getItem('password');
+    if (money === null) {
+        location.href = 'index.html';
+    }
+    if (password === null) {
+        location.href = 'index.html';
+    }
+    onload = function () {
+
+        let quit = document.getElementById("quit");
+        let back = document.getElementById("back");
+        let userDefined = document.getElementById("userDefined");
+        let addMoney = document.getElementsByClassName('number');
+
+        for (let i = 0; i < addMoney.length; i++) {
+            addMoney[i].onclick = function () {
+                let temp = this.innerText;
+                console.log(temp);
+                let money = localStorage.getItem('money');
+                localStorage.removeItem('money');
+                localStorage.setItem('money', (money - -temp) + '');
+                location.href = 'userIndex.html';
+            }
+        }
+
+        userDefined.onclick = function () {
+            let temp = prompt('请输入需要存入的金额');
+            let money = localStorage.getItem('money');
+            if (isNaN(temp) || temp === '' || temp/1 < 0){
+                alert('输入不合法');
+                return;
+            }
+            localStorage.removeItem('money');
+            localStorage.setItem('money', (money - -temp) + '');
+            location.href = 'userIndex.html';
+        }
+
+        //返回
+        back.onclick = function () {
+            location.href = 'userIndex.html';
+        }
+
+        //退卡
+        quit.onclick = function () {
+            location.href = 'index.html';
+        }
+
+
+
+
+    }
+</script>

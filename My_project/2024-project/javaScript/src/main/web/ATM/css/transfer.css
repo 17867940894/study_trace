@@ -1,0 +1,85 @@
+#main {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../imgs/login.jpg");
+    background-size: 100%;
+    display: flex;
+    position: relative;
+}
+
+.right {
+    position: absolute;
+    top: 30vh;
+    right: 0;
+    width: 20vw;
+    height: 70vh;
+}
+
+.center {
+    position: relative;
+    margin: auto;
+    width: 40vw;
+    height: 40vh;
+}
+
+.top {
+    width: 40vw;
+    height: 20%;
+    text-align: center;
+    font-size: 4vh;
+    background: #964040;
+}
+
+input {
+    margin: auto;
+    display: block;
+    border-radius: 5px;
+    width: 15vw;
+    height: 3vh;
+}
+
+input:hover{
+    border: #34a6f5 3px solid;
+}
+
+#transferNumber{
+    position: relative;
+    bottom: 3vh;
+}
+
+.s1 {
+    display: block;
+    line-height: 8vh;
+}
+
+.bottom {
+    display: flex;
+    position: relative;
+    width: 40vw;
+    height: 32vh;
+    background: #ffffff;
+}
+
+.bottom div {
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    line-height: 32vh;
+}
+
+button {
+    position: relative;
+    display: block;
+    top: 40vh;
+    margin-bottom: 10vh;
+    border-radius: 1vh;
+    width: 80%;
+    height: 10%;
+    background: linear-gradient(to bottom, white 10%, #34a6f5);
+    font-size: 3vh;
+}
+
+#back {
+    background: linear-gradient(to bottom, white 10%, #70ff00);
+}

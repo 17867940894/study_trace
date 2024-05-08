@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击切换背景颜色</title>
+    <link rel="stylesheet" href="Demo2.css">
+</head>
+
+<body>
+    <div id="main">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var main = document.getElementById("main");
+    var count = 1;
+    main.onclick = function () {
+        if (count >= 4) {
+            count = 1;
+        }
+        if (count == 1) {
+            main.style.background = "red";
+        } else if (count == 2) {
+            main.style.background = "yellow";
+        } else if (count == 3) {
+            main.style.background = "blue";
+        } else if (count == 4) {
+            main.style.background = "green";
+        }
+        count++;
+    }
+</script>

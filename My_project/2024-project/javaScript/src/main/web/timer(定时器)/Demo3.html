@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>秒表</title>
+</head>
+<body>
+<span>00</span>:
+<span>00</span>:
+<span>00</span>
+<hr>
+<button id="start">start</button>
+<button id="stop" disabled>stop</button>
+</body>
+</html>
+<script>
+    /**
+     * 按钮的状态保证只会有一个定时器执行，避免出现多个定时器执行同一功能，出现加速状况
+     */
+    onload = function () {
+        // 基数
+        let count = 0;
+        let start = document.getElementById("start");
+        let stop = document.getElementById("stop");
+        let spans = document.getElementsByTagName("span");
+        start.onclick = function () {
+            // 设置两个按钮的状态
+            start.disabled = true;
+            stop.disabled = false;
+            interval = setInterval(function () {
+                count++;
+                // 当基数=60，分钟位置加一
+                if (count === 60) {
+                    count = 0;
+                    let m = parseInt(spans[1].innerText);
+                    // 分钟小于两位数补零
+                    spans[1].innerText = m < 10 ? m + 1 === 10 ? m + 1 : "0" + (m + 1) : m + 1 + '';
+                }
+                // 秒小于两位数补零
+                spans[2].innerText = count < 10?"0" + count:count;
+            }, 10);
+        }
+
+        stop.onclick = function () {
+            start.disabled = false;
+            stop.disabled = true;
+            clearInterval(interval);
+        }
+    }
+</script>

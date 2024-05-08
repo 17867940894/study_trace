@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    function demo1() {
+        let garden = prompt('请输入判断等级的分数');
+        if (isNaN(garden) || garden > 100 || garden < 0){
+            alert('输入有误');
+            location.reload();
+            return;
+        }
+        if (garden/1.0 >= 90)
+            alert('A');
+        else if (garden/1.0 >= 80)
+            alert('B');
+        else if (garden/1.0 >= 70)
+            alert('C');
+        else if (garden/1.0 >= 60)
+            alert('D');
+        else
+            alert('不合格');
+    }
+
+    onload = function () {
+        demo1();
+    }
+</script>

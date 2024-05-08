@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询余额页面</title>
+    <link rel="stylesheet" href="../css/checkBalance.css">
+</head>
+<body>
+<div id="main">
+    <div class="center">
+        <div class="top">
+            <span class="s1">您的帐户余额信息</span>
+        </div>
+        <div class="bottom">
+            <!--余额-->
+            <span id="balance"></span>
+        </div>
+    </div>
+
+    <div id="right" class="right">
+        <button id="back">
+            返回
+        </button>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    let balance = document.getElementById("balance");
+    let back = document.getElementById("back");
+    balance.innerText = '余额: ' + localStorage.getItem('money') + ' 元';
+    back.onclick = function () {
+        location.href = 'userIndex.html';
+    }
+</script>

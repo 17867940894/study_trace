@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="f1()">按钮1</button>
+    <button ondblclick="f2()">按钮2</button>
+    <button onclick="f3()">按钮3</button>
+</body>
+</html>
+
+<script>
+    function f1(){
+        alert("f1()执行了");
+        return 10;
+    }
+    function f2(){
+        alert("f2()执行了");
+        return 20;
+    }
+    function f3(){
+        let sum = f1() + f2();
+        alert(sum);
+    }
+</script>

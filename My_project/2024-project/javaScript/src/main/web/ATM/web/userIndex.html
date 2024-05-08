@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户主页</title>
+    <link rel="stylesheet" href="../css/userIndex.css">
+</head>
+<body>
+<div class="main">
+
+    <div class="left">
+        <button id="transfer">转账</button>
+        <button id="checkBalance">查询余额</button>
+        <button id="updatePassword">修改密码</button>
+    </div>
+
+    <div class="right">
+        <button id="deposit">存款</button>
+        <button id="withdrawal">取款</button>
+        <button id="quit">退卡</button>
+    </div>
+
+</div>
+</body>
+</html>
+
+<script>
+
+    let money = localStorage.getItem('money');
+    let password = localStorage.getItem('password');
+    if (money === null) {
+        location.href = 'index.html';
+    }
+    if (password === null) {
+        location.href = 'index.html';
+    }
+    onload = function () {
+        let transfer = document.getElementById("transfer");
+        let checkBalance = document.getElementById("checkBalance");
+        let updatePassword = document.getElementById("updatePassword");
+        let deposit = document.getElementById("deposit");
+        let withdrawal = document.getElementById("withdrawal");
+        let quit = document.getElementById("quit");
+
+        //退卡
+        quit.onclick = function () {
+            location.href = 'index.html';
+        }
+
+        //修改密码
+        updatePassword.onclick = function () {
+            location.href = 'changePassword.html';
+        }
+
+        //查看余额
+        checkBalance.onclick = function () {
+            location.href = 'checkBalance.html';
+        }
+
+        //转账
+        transfer.onclick = function () {
+            location.href = 'transfer.html';
+        }
+
+        //存款
+        deposit.onclick = function (){
+            location.href = 'deposit.html';
+        }
+
+        //取款
+        withdrawal.onclick = function () {
+            location.href = 'withdrawal.html';
+        }
+
+    }
+</script>

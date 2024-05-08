@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>等待页面</title>
+</head>
+<body>
+<span>5(4...)秒后跳转到用户页面</span>
+<button onclick="f()">直接跳转</button>
+</body>
+</html>
+<script>
+    onload = function () {
+        setTimeout(function () {
+            f();
+        },5000);
+    }
+    function f(){
+        location.href = "userPage.html";
+    }
+
+
+</script>
+

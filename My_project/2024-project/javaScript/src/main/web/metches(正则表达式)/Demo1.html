@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手机号判断</title>
+</head>
+<body>
+<input type="text" id="phoneNum">
+<button onclick="f()">测试</button>
+</body>
+</html>
+
+<script>
+    function f(){
+        let phoneNum = document.getElementById("phoneNum");
+        let reg = new RegExp("1[0-9]{10}");
+        let isPhone = reg.test(phoneNum.value);
+        if (isPhone){
+            alert("格式正确");
+        }else{
+            alert("格式有误");
+        }
+        phoneNum.value = "";
+    }
+</script>

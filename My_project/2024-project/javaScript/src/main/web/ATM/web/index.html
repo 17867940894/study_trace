@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插卡式登录页面</title>
+</head>
+<body>
+<img src="../imgs/index.jpg" style="width: 100vw;height: 100vh">
+</body>
+</html>
+
+<script>
+    onload = function () {
+        let money = localStorage.getItem('money');
+        let password = localStorage.getItem('password');
+        if (money === null) {
+            localStorage.setItem('money', '10000.0');
+        }
+        if (password === null) {
+            localStorage.setItem('password', '123456');
+        }
+        setTimeout(function () {
+            location.href = 'login.html';
+        }, 3000);
+    }
+</script>

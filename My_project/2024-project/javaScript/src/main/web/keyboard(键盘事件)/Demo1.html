@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按键事件</title>
+    <style>
+input{
+    width: 500px;
+    height: 500px;
+    font-size: 100%;
+    background: deeppink;
+}
+    </style>
+</head>
+
+
+<body>
+<input id="main">
+</body>
+</html>
+<script>
+    onload = function () {
+        let main = document.getElementById("main");
+        main.onkeydown = function () {
+            console.log(1);
+        }
+        main.onkeyup = function () {
+            console.log(2);
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="{CHARSET}">
+    <title></title>
+    <style>
+        *{margin:0;padding: 0}
+        #box{
+            width: 500px;height: 300px;
+            background-color: blue;
+            border: black 1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById("#box");
+    box.onmousedown = function (event){
+        event = event ||window.event;
+        //盒子的起始位置
+        var eleX = box.offsetLeft;
+        var eleY = box.offsetTop;
+
+        //鼠标的起始位置
+        var startX = event.clientX;
+        var startY = event.clientY;
+
+        box.onmousemove = function (event){
+            event = event ||window.event;
+
+            var endX = event.clientX;
+            var endY = event.clientY;
+
+            //距离差
+            var disX = endX - startX;
+            var disY = endY - startY;
+
+            //跟随移动
+            var left = eleX + disX;
+            var top = eleY + disY;
+
+            box.style.left = left + "px";
+            box.style.top = top + "px";
+        }
+        box.onmouseleave = function (){
+            box.onmousemove = box.onmouseleave;
+        }
+    }
+
+</script>
+</html>
